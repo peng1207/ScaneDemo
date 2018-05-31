@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
-
-typedef void(^ScanBackBlock)(NSString *scanCodeType,NSString *result);
+#import "SPSaneHead.h"
 
 @interface SPScanManager : NSObject
 

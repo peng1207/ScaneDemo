@@ -63,6 +63,7 @@
 		23F31A3D20BFA355006C9CFF /* SPScanVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScanVC.m; sourceTree = "<group>"; };
 		23F31A3F20BFA5D5006C9CFF /* SPScanBoxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScanBoxView.h; sourceTree = "<group>"; };
 		23F31A4020BFA5D5006C9CFF /* SPScanBoxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScanBoxView.m; sourceTree = "<group>"; };
+		23F31A4220BFC0C5006C9CFF /* SPSaneHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPSaneHead.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 				23F31A3720BF8958006C9CFF /* SPScanePreview.m */,
 				23F31A3920BF8A52006C9CFF /* SPScanManager.h */,
 				23F31A3A20BF8A52006C9CFF /* SPScanManager.m */,
+				23F31A4220BFC0C5006C9CFF /* SPSaneHead.h */,
 				23F31A0A20BF88F8006C9CFF /* Main.storyboard */,
 				23F31A0D20BF88FA006C9CFF /* Assets.xcassets */,
 				23F31A0F20BF88FA006C9CFF /* LaunchScreen.storyboard */,

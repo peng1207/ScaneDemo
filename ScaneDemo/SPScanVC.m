@@ -43,8 +43,13 @@
 - (SPScanManager *)scanManager{
     if (!_scanManager) {
         _scanManager = [SPScanManager initLayer:(AVCaptureVideoPreviewLayer *)self.scanePreview.layer metadateTypes:@[AVMetadataObjectTypeQRCode] rectOfInterest:CGRectMake(0.2f, 0.2f, 0.8f, 0.8f)];
+        __weak typeof(self) weakSelf = self;
         _scanManager.scanBackBlock = ^(NSString *scanCodeType, NSString *result) {
-            
+            __weak typeof(self) strongSelf = weakSelf;
+            if (strongSelf && strongSelf.scanBackBlock) {
+                strongSelf.scanBackBlock(scanCodeType, result);
+            }
+            [strongSelf dismissViewControllerAnimated:true completion:nil];
         };
     }
     return _scanManager;

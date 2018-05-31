@@ -8,8 +8,11 @@
 //  扫描主界面
 
 #import <UIKit/UIKit.h>
+#import "SPSaneHead.h"
 
 @interface SPScanVC : UIViewController
+
+@property (nonatomic,copy) ScanBackBlock scanBackBlock;    // 获取数据回调
 
 
 @end

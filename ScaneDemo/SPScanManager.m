@@ -32,7 +32,6 @@
  */
 - (void)setup{
     self.session = [[AVCaptureSession alloc] init];
-//    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session] ;
     self.previewLayer.session = self.session;
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput *deviceinput = [[AVCaptureDeviceInput alloc] initWithDevice:self.device error:nil];
@@ -137,6 +136,7 @@
                 self.scanBackBlock(nil, nil);
             }
         }
+     
     }];
     
     
