@@ -7,7 +7,7 @@
 //
 
 #import "SPScanBoxView.h"
-
+#import "Masonry.h"
 @interface SPScanBoxView()
 
 @property (nonatomic) NSTimer *timer;
@@ -22,7 +22,7 @@
  */
 - (void)startAnimate{
     if (!_timer) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveUpAndDownLine) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveUpAndDownLine) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     }
 }
@@ -44,22 +44,30 @@
         lineFrame.origin.y = 0;
         self.lineView.frame = lineFrame;
     }else{
-        lineFrame.origin.y += 5;
-        [UIView animateWithDuration:0.2 animations:^{
+        lineFrame.origin.y += 10;
+        [UIView animateWithDuration:0.1 animations:^{
             self.lineView.frame = lineFrame;
         }];
     }
 }
 
-
 -  (UIView *)lineView{
     if (!_lineView) {
         _lineView = [[UIView alloc] init];
+        _lineView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.4];
         [self addSubview:_lineView];
+        [self addConstraintForLineView];
     }
     return _lineView;
 }
-
-
+/**
+ 添加分割线约束
+ */
+- (void)addConstraintForLineView{
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self);
+        make.height.mas_equalTo(1);
+    }];
+}
 
 @end

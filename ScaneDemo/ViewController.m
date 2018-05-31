@@ -30,6 +30,9 @@
 }
 - (void)clickScanAction {
     SPScanVC *scanVC = [[SPScanVC alloc] init];
+    scanVC.scanBackBlock = ^(NSString *scanCodeType, NSString *result) {
+        NSLog(@"scanCodeType:%@-----result:%@",scanCodeType,result); 
+    };
     [self presentViewController:scanVC animated:true completion:nil];
 }
 

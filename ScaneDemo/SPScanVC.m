@@ -9,11 +9,20 @@
 #import "SPScanVC.h"
 #import "SPScanManager.h"
 #import "SPScanePreview.h"
-
+#import "Masonry.h"
+#import "SPScanBoxView.h"
 
 @interface SPScanVC ()
 @property (nonatomic,strong) SPScanManager *scanManager;
 @property (nonatomic,strong) SPScanePreview *scanePreview;
+@property (nonatomic,strong) SPScanBoxView *boxView;
+@property (nonatomic,strong) UIView *topView;
+@property (nonatomic,strong) UIView *leftView;
+@property (nonatomic,strong) UIView *rightView;
+@property (nonatomic,strong) UIView *bottomView;
+@property (nonatomic,strong) UIButton *flashBtn;
+@property (nonatomic,strong) UIButton *albumBtn;
+
 @end
 
 @implementation SPScanVC
@@ -25,21 +34,93 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.scanManager startRunning];
+    [self start];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.scanManager stopRunning];
+    [self stop];
 }
 
+#pragma mark -- ation
+/**
+ 开始
+ */
+- (void)start{
+      [self.scanManager startRunning];
+    [self.boxView startAnimate];
+}
+/**
+ 结束
+ */
+- (void)stop{
+     [self.scanManager stopRunning];
+    [self.boxView stopAnimate];
+}
+#pragma mark -- UI
 /**
   创建UI
  */
 - (void)setupUI{
-    self.scanePreview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [self.view addSubview:self.scanePreview];
+    [self.view addSubview:self.boxView];
+    [self.view addSubview:self.topView];
+    [self.view addSubview:self.leftView];
+    [self.view addSubview:self.rightView];
+    [self.view addSubview:self.bottomView];
+    [self.view addSubview:self.flashBtn];
+    [self.view addSubview:self.albumBtn];
+    [self addConstraintToView];
 }
+/**
+    添加约束
+ */
+- (void)addConstraintToView{
+    [self.scanePreview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.equalTo(self.view).offset(0);
+    }];
+    [self.boxView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view).offset(0);
+        make.width.equalTo(self.scanePreview.mas_width).multipliedBy(0.6);
+        make.height.equalTo(self.boxView.mas_width).offset(0);
+    }];
+    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self.view).offset(0);
+        make.bottom.equalTo(self.boxView.mas_top).offset(0);
+    }];
+    [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(0);
+        make.top.bottom.equalTo(self.boxView).offset(0);
+        make.right.equalTo(self.boxView.mas_left).offset(0);
+    }];
+    [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).offset(0);
+        make.top.bottom.equalTo(self.boxView).offset(0);
+        make.left.equalTo(self.boxView.mas_right).offset(0);
+    }];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.boxView.mas_bottom).offset(0);
+        make.left.right.bottom.equalTo(self.view).offset(0);
+    }];
+    [self.flashBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(0);
+        } else {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-20);
+        }
+        make.size.mas_equalTo(CGSizeMake(60, 40));
+        make.centerX.equalTo(self.view.mas_centerX).multipliedBy(0.25);
+    }];
+    [self.albumBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.flashBtn.mas_bottom).offset(0);
+        make.width.equalTo(self.flashBtn.mas_width).offset(0);
+        make.height.equalTo(self.flashBtn.mas_height).offset(0);
+        make.centerX.equalTo(self.view.mas_centerX).multipliedBy(0.75);
+    }];
+    
+}
+
+#pragma mark -- 懒加载
 - (SPScanManager *)scanManager{
     if (!_scanManager) {
         _scanManager = [SPScanManager initLayer:(AVCaptureVideoPreviewLayer *)self.scanePreview.layer metadateTypes:@[AVMetadataObjectTypeQRCode] rectOfInterest:CGRectMake(0.2f, 0.2f, 0.8f, 0.8f)];
@@ -59,6 +140,58 @@
         _scanePreview = [[SPScanePreview alloc] init];
     }
     return _scanePreview;
+}
+- (SPScanBoxView *)boxView{
+    if (!_boxView) {
+        _boxView = [[SPScanBoxView alloc] init];
+        _boxView.layer.borderColor = [[UIColor redColor] colorWithAlphaComponent:0.5].CGColor;
+        _boxView.layer.borderWidth = 1;
+    }
+    return _boxView;
+}
+- (UIView *)topView{
+    if (!_topView) {
+        _topView = [self setupView];
+    }
+    return _topView;
+}
+- (UIView *)leftView{
+    if (!_leftView) {
+        _leftView = [self setupView];
+    }
+    return _leftView;
+}
+- (UIView *)rightView{
+    if (!_rightView) {
+        _rightView = [self setupView];
+    }
+    return _rightView;
+}
+- (UIView *)bottomView{
+    if (!_bottomView) {
+        _bottomView = [self setupView];
+    }
+    return _bottomView;
+}
+/**
+ 创建View
+ */
+- (UIView *)setupView{
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    return view;
+}
+- (UIButton *)flashBtn{
+    if (!_flashBtn) {
+        _flashBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    }
+    return _flashBtn;
+}
+- (UIButton *)albumBtn{
+    if (!_albumBtn) {
+        _albumBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    }
+    return _albumBtn; 
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

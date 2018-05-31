@@ -132,9 +132,7 @@
                 self.scanBackBlock(feature.type, feature.messageString);
             }
         }else{
-            if (self.scanBackBlock) {
-                self.scanBackBlock(nil, nil);
-            }
+            // 没有获取到二维码的提示
         }
      
     }];
