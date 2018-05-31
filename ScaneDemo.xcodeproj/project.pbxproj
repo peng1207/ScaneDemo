@@ -15,6 +15,8 @@
 		23F31A1420BF88FA006C9CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A1320BF88FA006C9CFF /* main.m */; };
 		23F31A1E20BF88FA006C9CFF /* ScaneDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A1D20BF88FA006C9CFF /* ScaneDemoTests.m */; };
 		23F31A2920BF88FA006C9CFF /* ScaneDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A2820BF88FA006C9CFF /* ScaneDemoUITests.m */; };
+		23F31A3820BF8958006C9CFF /* SPScanePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A3720BF8958006C9CFF /* SPScanePreview.m */; };
+		23F31A3B20BF8A52006C9CFF /* SPScanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A3A20BF8A52006C9CFF /* SPScanManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		23F31A2420BF88FA006C9CFF /* ScaneDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScaneDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F31A2820BF88FA006C9CFF /* ScaneDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaneDemoUITests.m; sourceTree = "<group>"; };
 		23F31A2A20BF88FA006C9CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23F31A3620BF8958006C9CFF /* SPScanePreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScanePreview.h; sourceTree = "<group>"; };
+		23F31A3720BF8958006C9CFF /* SPScanePreview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScanePreview.m; sourceTree = "<group>"; };
+		23F31A3920BF8A52006C9CFF /* SPScanManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPScanManager.h; sourceTree = "<group>"; };
+		23F31A3A20BF8A52006C9CFF /* SPScanManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPScanManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				23F31A0520BF88F8006C9CFF /* AppDelegate.m */,
 				23F31A0720BF88F8006C9CFF /* ViewController.h */,
 				23F31A0820BF88F8006C9CFF /* ViewController.m */,
+				23F31A3620BF8958006C9CFF /* SPScanePreview.h */,
+				23F31A3720BF8958006C9CFF /* SPScanePreview.m */,
+				23F31A3920BF8A52006C9CFF /* SPScanManager.h */,
+				23F31A3A20BF8A52006C9CFF /* SPScanManager.m */,
 				23F31A0A20BF88F8006C9CFF /* Main.storyboard */,
 				23F31A0D20BF88FA006C9CFF /* Assets.xcassets */,
 				23F31A0F20BF88FA006C9CFF /* LaunchScreen.storyboard */,
@@ -264,6 +274,8 @@
 			files = (
 				23F31A0920BF88F8006C9CFF /* ViewController.m in Sources */,
 				23F31A1420BF88FA006C9CFF /* main.m in Sources */,
+				23F31A3820BF8958006C9CFF /* SPScanePreview.m in Sources */,
+				23F31A3B20BF8A52006C9CFF /* SPScanManager.m in Sources */,
 				23F31A0620BF88F8006C9CFF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +446,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W222R58V26;
 				INFOPLIST_FILE = ScaneDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +464,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W222R58V26;
 				INFOPLIST_FILE = ScaneDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
