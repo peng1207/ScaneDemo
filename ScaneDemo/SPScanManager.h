@@ -5,7 +5,7 @@
 //  Created by okdeer on 2018/5/31.
 //  Copyright © 2018年 okdeer. All rights reserved.
 //
-
+// 扫描初始化 扫描管理类
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>

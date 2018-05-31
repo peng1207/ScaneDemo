@@ -7,13 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "SPScanManager.h"
-#import "SPScanePreview.h"
+#import "SPScanVC.h"
 
 @interface ViewController ()
 
-@property (nonatomic,strong) SPScanManager *scanManager;
-@property (nonatomic,strong) SPScanePreview *scanePreview;
 
 @end
 
@@ -21,28 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.scanePreview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    [self.view addSubview:self.scanePreview];
-    [self.scanManager startRunning];
-    
+ 
+    UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    btn.frame = CGRectMake(0, 0, 100, 100);
+    btn.center = self.view.center;
+    [btn setTitle:@"扫描二维码" forState:(UIControlStateNormal)];
+    [btn setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+    [btn addTarget:self action:@selector(clickScanAction) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:btn];
     // Do any additional setup after loading the view, typically from a nib.
 }
+- (void)clickScanAction {
+    SPScanVC *scanVC = [[SPScanVC alloc] init];
+    [self presentViewController:scanVC animated:true completion:nil];
+}
 
-- (SPScanManager *)scanManager{
-    if (!_scanManager) {
-        _scanManager = [SPScanManager initLayer:(AVCaptureVideoPreviewLayer *)self.scanePreview.layer metadateTypes:@[AVMetadataObjectTypeQRCode] rectOfInterest:CGRectMake(0.2f, 0.2f, 0.8f, 0.8f)];
-        _scanManager.scanBackBlock = ^(NSString *scanCodeType, NSString *result) {
-            
-        };
-    }
-    return _scanManager;
-}
-- (SPScanePreview *)scanePreview{
-    if (!_scanePreview) {
-        _scanePreview = [[SPScanePreview alloc] init];
-    }
-    return _scanePreview;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
