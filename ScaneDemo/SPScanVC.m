@@ -22,6 +22,7 @@
 @property (nonatomic,strong) UIView *bottomView;
 @property (nonatomic,strong) UIButton *flashBtn;
 @property (nonatomic,strong) UIButton *albumBtn;
+@property (nonatomic,strong) UIButton *backBtn;
 
 @end
 
@@ -54,8 +55,28 @@
  结束
  */
 - (void)stop{
-     [self.scanManager stopRunning];
+    [self.scanManager stopRunning];
+    [self.scanManager clickFlashAction:NO];
     [self.boxView stopAnimate];
+}
+/**
+ 点击闪光灯
+ */
+- (void)clickFlashAction{
+    self.flashBtn.selected = !self.flashBtn.isSelected;
+    [self.scanManager clickFlashAction:self.flashBtn.isSelected];
+}
+/**
+ 点击相册
+ */
+- (void)clickAlbumAction {
+    [self.scanManager clickAlbum:self];
+}
+/**
+ 点击返回按钮
+ */
+- (void)clickBackAction{
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 #pragma mark -- UI
 /**
@@ -70,6 +91,7 @@
     [self.view addSubview:self.bottomView];
     [self.view addSubview:self.flashBtn];
     [self.view addSubview:self.albumBtn];
+    [self.view addSubview:self.backBtn];
     [self addConstraintToView];
 }
 /**
@@ -109,13 +131,19 @@
             make.bottom.equalTo(self.view.mas_bottom).offset(-20);
         }
         make.size.mas_equalTo(CGSizeMake(60, 40));
-        make.centerX.equalTo(self.view.mas_centerX).multipliedBy(0.25);
+        make.centerX.equalTo(self.view.mas_centerX).multipliedBy(0.5);
     }];
     [self.albumBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.flashBtn.mas_bottom).offset(0);
         make.width.equalTo(self.flashBtn.mas_width).offset(0);
         make.height.equalTo(self.flashBtn.mas_height).offset(0);
-        make.centerX.equalTo(self.view.mas_centerX).multipliedBy(0.75);
+        make.centerX.equalTo(self.view.mas_centerX).multipliedBy(1.5);
+    }];
+    
+    [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(12);
+        make.top.equalTo(self.view).offset(CGRectGetHeight( [[UIApplication sharedApplication] statusBarFrame]));
+        make.size.mas_equalTo(CGSizeMake(40, 40));
     }];
     
 }
@@ -184,14 +212,27 @@
 - (UIButton *)flashBtn{
     if (!_flashBtn) {
         _flashBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_flashBtn setTitle:@"闪光的" forState:(UIControlStateNormal)];
+        [_flashBtn addTarget:self action:@selector(clickFlashAction) forControlEvents:(UIControlEventTouchUpInside)];
+        
     }
     return _flashBtn;
 }
 - (UIButton *)albumBtn{
     if (!_albumBtn) {
         _albumBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_albumBtn setTitle:@"相册" forState:(UIControlStateNormal)];
+        [_albumBtn addTarget:self action:@selector(clickAlbumAction) forControlEvents:(UIControlEventTouchUpInside)];
     }
-    return _albumBtn; 
+    return _albumBtn;
+}
+- (UIButton *)backBtn{
+    if (!_backBtn) {
+        _backBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_backBtn  setTitle:@"返回" forState:(UIControlStateNormal)];
+        [_backBtn addTarget:self action:@selector(clickBackAction) forControlEvents:(UIControlEventTouchUpInside)];
+    }
+    return _backBtn;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

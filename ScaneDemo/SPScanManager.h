@@ -15,6 +15,15 @@
 
 @property (nonatomic,copy) ScanBackBlock scanBackBlock;    // 获取数据回调
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
+
+/**
+  初始化
+
+ @param previewLayer 预览的layer
+ @param metadateTypeArray 扫描的类型
+ @param rectOfInterest 扫描区域
+ @return 
+ */
 +  (instancetype)initLayer:(AVCaptureVideoPreviewLayer *)previewLayer metadateTypes:(NSArray *)metadateTypeArray rectOfInterest:(CGRect)rectOfInterest;
 /**
  开始扫描

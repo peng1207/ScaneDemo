@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2364564120C0F42D0044A6F6 /* SPUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564020C0F42D0044A6F6 /* SPUploadManager.m */; };
+		2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564320C0F7540044A6F6 /* UIImage+SPExt.m */; };
 		23F31A0620BF88F8006C9CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A0520BF88F8006C9CFF /* AppDelegate.m */; };
 		23F31A0920BF88F8006C9CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F31A0820BF88F8006C9CFF /* ViewController.m */; };
 		23F31A0C20BF88F8006C9CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F31A0A20BF88F8006C9CFF /* Main.storyboard */; };
@@ -42,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2364563F20C0F42D0044A6F6 /* SPUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUploadManager.h; sourceTree = "<group>"; };
+		2364564020C0F42D0044A6F6 /* SPUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUploadManager.m; sourceTree = "<group>"; };
+		2364564220C0F7540044A6F6 /* UIImage+SPExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExt.h"; sourceTree = "<group>"; };
+		2364564320C0F7540044A6F6 /* UIImage+SPExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExt.m"; sourceTree = "<group>"; };
 		23F31A0120BF88F8006C9CFF /* ScaneDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaneDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F31A0420BF88F8006C9CFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		23F31A0520BF88F8006C9CFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -162,6 +168,10 @@
 				23F31A0F20BF88FA006C9CFF /* LaunchScreen.storyboard */,
 				23F31A1220BF88FA006C9CFF /* Info.plist */,
 				23F31A1320BF88FA006C9CFF /* main.m */,
+				2364563F20C0F42D0044A6F6 /* SPUploadManager.h */,
+				2364564020C0F42D0044A6F6 /* SPUploadManager.m */,
+				2364564220C0F7540044A6F6 /* UIImage+SPExt.h */,
+				2364564320C0F7540044A6F6 /* UIImage+SPExt.m */,
 			);
 			path = ScaneDemo;
 			sourceTree = "<group>";
@@ -388,9 +398,11 @@
 				23F31A1420BF88FA006C9CFF /* main.m in Sources */,
 				23F31A3E20BFA355006C9CFF /* SPScanVC.m in Sources */,
 				23F31A3820BF8958006C9CFF /* SPScanePreview.m in Sources */,
+				2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */,
 				23F31A3B20BF8A52006C9CFF /* SPScanManager.m in Sources */,
 				23F31A0620BF88F8006C9CFF /* AppDelegate.m in Sources */,
 				23F31A4120BFA5D5006C9CFF /* SPScanBoxView.m in Sources */,
+				2364564120C0F42D0044A6F6 /* SPUploadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
