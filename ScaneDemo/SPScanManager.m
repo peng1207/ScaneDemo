@@ -47,7 +47,6 @@
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     output.rectOfInterest = self.rectOfInterest;
 }
-
 /**
  开始扫描
  */
@@ -115,8 +114,6 @@
 #pragma mark - imagePickerController delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-
-    
     [picker dismissViewControllerAnimated:YES completion:^{
         //1.获取选择的图片
         UIImage *image = info[UIImagePickerControllerOriginalImage];
@@ -127,7 +124,6 @@
         if (features.count >=1) {
             /**结果对象 */
             CIQRCodeFeature *feature = [features objectAtIndex:0];
-           
             if (self.scanBackBlock) {
                 self.scanBackBlock(feature.type, feature.messageString);
             }
