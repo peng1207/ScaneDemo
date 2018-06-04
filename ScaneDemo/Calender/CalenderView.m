@@ -59,14 +59,21 @@ static NSString *const headerIdentifier = @"headerIdentifier";
         NSMutableArray *array = [[NSMutableArray alloc]init];
         [self.dataSource addObject:array];
     }
-    
+    NSInteger currentYear =  [startArray[0] integerValue] ;
     for (int i = 0; i < month; i++) {
-        int              month       = ((int)[NSDate month:self.startDay] + i)%12;
         NSDateComponents *components = [[NSDateComponents alloc]init];
         
         //获取下个月的年月日信息,并将其转为date
-        components.month = month ? month : 12;
-        components.year  = 2018 + i/12;
+         NSInteger currentMonth =  [startArray[1] integerValue] + i;
+        NSLog(@"%ld",(long)currentMonth);
+        components.month = currentMonth % 12;
+        if (currentMonth / 12 > 0 && currentMonth % 12 == 0) {
+            components.month = 12;
+        }else if (currentMonth / 12 > 0 && currentMonth % 12 == 1){
+            currentYear ++ ;
+        }
+        
+        components.year  = currentYear;
         components.day   = 1;
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDate     *nextDate = [calendar dateFromComponents:components];
@@ -85,7 +92,7 @@ static NSString *const headerIdentifier = @"headerIdentifier";
                 string    = @"";
                 model.day = string;
             } else {
-                string    = [NSString stringWithFormat:@"%ld", j - firstDayInThisMounth + 1];
+                string    = [NSString stringWithFormat:@"%02zd", j - firstDayInThisMounth + 1];
                 model.day = string;
                 
                 NSString *dateStr = [NSString stringWithFormat:@"%zd-%02zd-%@",model.year, model.month, model.day];
@@ -163,7 +170,7 @@ static NSString *const headerIdentifier = @"headerIdentifier";
         CalenderHeaderView *heardView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier forIndexPath:indexPath];
         CalenderModel      *model     = self.dataSource[indexPath.section][indexPath.item];
         heardView.yearAndMonthLabel.text = [NSString stringWithFormat:self.yearMonthFormat.length ? self.yearMonthFormat : @"%zd年%zd月", model.year, model.month];
-        heardView.yearAndMonthLabel.textAlignment = NSTextAlignmentCenter; 
+        heardView.yearAndMonthLabel.textAlignment = NSTextAlignmentCenter;
         NSString *dateStr = [NSString stringWithFormat:@"%zd-%02zd",model.year, model.month];
         if ([NSDate isCurrenMonth:dateStr]) {
             heardView.yearAndMonthLabel.textColor = [UIColor colorWithHexString:@"#00BB00"];
