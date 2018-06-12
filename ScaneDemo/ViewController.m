@@ -50,6 +50,15 @@
     }];
     
  
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path addArcWithCenter:CGPointMake(self.view.frame.size.width - 30, 300) radius:5 startAngle:M_PI * 1.8 endAngle:M_PI * 2.5 clockwise:YES];
+  CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.path = path.CGPath;
+    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.strokeColor = [UIColor redColor].CGColor;
+    [self.view.layer addSublayer:layer];
+    
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.dubbleView.isRight = NO;
         self.imageView.isRight = YES;

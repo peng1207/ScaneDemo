@@ -56,7 +56,8 @@
     CGFloat offset = 0.2 + kBorderOffset;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextClearRect(context, rect);
+    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor); // 设置填充颜色
+    CGContextFillRect(context, rect);
     CGContextSetLineJoin(context, kCGLineJoinRound); //
     CGContextSetLineWidth(context, strokeWidth); // 设置画笔宽度
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor); // 设置画笔颜色
@@ -90,6 +91,7 @@
     
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
+   
 }
 - (UIImageView *)imageView{
     if (!_imageView) {

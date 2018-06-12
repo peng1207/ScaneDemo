@@ -59,20 +59,22 @@
     CGFloat viewW = rect.size.width;
     CGFloat viewH = rect.size.height;
     
-    CGFloat strokeWidth = 0.2;
+    CGFloat strokeWidth = 0.3;
     CGFloat borderRadius = 5;
     CGFloat offset = 0.2 + kBorderOffset;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor); // 设置填充颜色
+    CGContextFillRect(context, rect);
     CGContextSetLineJoin(context, kCGLineJoinRound); //
     CGContextSetLineWidth(context, strokeWidth); // 设置画笔宽度
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor); // 设置画笔颜色
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor); // 设置填充颜色
     
     CGContextBeginPath(context);
-    
+    CGFloat pointY  = 20;
     if (_isRight) {
-        CGFloat pointY  = 20;
+        
         CGContextMoveToPoint(context, viewW - kPopupTriangleWidth+offset, borderRadius + offset);
         CGContextAddLineToPoint(context,viewW -  kPopupTriangleWidth + offset,  pointY - kPopupTriangleHeigh/ 2  + offset);
         CGContextAddLineToPoint(context, viewW - offset, pointY + offset);
@@ -84,7 +86,6 @@
         CGContextAddArcToPoint(context, viewW - kPopupTriangleWidth - offset ,  offset, viewW - offset - kPopupTriangleWidth, offset + borderRadius, borderRadius-strokeWidth);
         
     }else{
-        CGFloat pointY  = 20;
         CGContextMoveToPoint(context, kPopupTriangleWidth+offset, borderRadius + offset);
         CGContextAddLineToPoint(context, kPopupTriangleWidth + offset,  pointY - kPopupTriangleHeigh/ 2  + offset);
         CGContextAddLineToPoint(context, offset, pointY + offset);
@@ -99,6 +100,8 @@
  
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);
+    
+//     CGContextStrokePath(context);
 }
 
 @end
