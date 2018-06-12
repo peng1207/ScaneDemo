@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2364564120C0F42D0044A6F6 /* SPUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564020C0F42D0044A6F6 /* SPUploadManager.m */; };
 		2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564320C0F7540044A6F6 /* UIImage+SPExt.m */; };
+		23CA481620CF56C600F664DE /* SPLeftBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA481520CF56C600F664DE /* SPLeftBubbleView.m */; };
+		23CA481920CF698500F664DE /* SPBubbleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA481820CF698500F664DE /* SPBubbleImageView.m */; };
 		23D059EC20C4CBA000941858 /* CalenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D059DE20C4CB9F00941858 /* CalenderView.m */; };
 		23D059ED20C4CBA000941858 /* CalenderCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D059DF20C4CB9F00941858 /* CalenderCollectionCell.m */; };
 		23D059EE20C4CBA000941858 /* CalenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D059E220C4CB9F00941858 /* CalenderModel.m */; };
@@ -55,6 +57,10 @@
 		2364564020C0F42D0044A6F6 /* SPUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUploadManager.m; sourceTree = "<group>"; };
 		2364564220C0F7540044A6F6 /* UIImage+SPExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExt.h"; sourceTree = "<group>"; };
 		2364564320C0F7540044A6F6 /* UIImage+SPExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExt.m"; sourceTree = "<group>"; };
+		23CA481420CF56C600F664DE /* SPLeftBubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLeftBubbleView.h; sourceTree = "<group>"; };
+		23CA481520CF56C600F664DE /* SPLeftBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLeftBubbleView.m; sourceTree = "<group>"; };
+		23CA481720CF698500F664DE /* SPBubbleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBubbleImageView.h; sourceTree = "<group>"; };
+		23CA481820CF698500F664DE /* SPBubbleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBubbleImageView.m; sourceTree = "<group>"; };
 		23D059DE20C4CB9F00941858 /* CalenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderView.m; sourceTree = "<group>"; };
 		23D059DF20C4CB9F00941858 /* CalenderCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderCollectionCell.m; sourceTree = "<group>"; };
 		23D059E020C4CB9F00941858 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -206,6 +212,10 @@
 				23F31A3920BF8A52006C9CFF /* SPScanManager.h */,
 				23F31A3A20BF8A52006C9CFF /* SPScanManager.m */,
 				23F31A4220BFC0C5006C9CFF /* SPSaneHead.h */,
+				23CA481420CF56C600F664DE /* SPLeftBubbleView.h */,
+				23CA481520CF56C600F664DE /* SPLeftBubbleView.m */,
+				23CA481720CF698500F664DE /* SPBubbleImageView.h */,
+				23CA481820CF698500F664DE /* SPBubbleImageView.m */,
 				23F31A0A20BF88F8006C9CFF /* Main.storyboard */,
 				23F31A0D20BF88FA006C9CFF /* Assets.xcassets */,
 				23F31A0F20BF88FA006C9CFF /* LaunchScreen.storyboard */,
@@ -444,11 +454,13 @@
 				23D059EE20C4CBA000941858 /* CalenderModel.m in Sources */,
 				23F31A1420BF88FA006C9CFF /* main.m in Sources */,
 				23D059ED20C4CBA000941858 /* CalenderCollectionCell.m in Sources */,
+				23CA481620CF56C600F664DE /* SPLeftBubbleView.m in Sources */,
 				23F31A3E20BFA355006C9CFF /* SPScanVC.m in Sources */,
 				23F31A3820BF8958006C9CFF /* SPScanePreview.m in Sources */,
 				23D059EC20C4CBA000941858 /* CalenderView.m in Sources */,
 				2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */,
 				23F31A3B20BF8A52006C9CFF /* SPScanManager.m in Sources */,
+				23CA481920CF698500F664DE /* SPBubbleImageView.m in Sources */,
 				23D059F120C4CBA000941858 /* NSDate+Extension.m in Sources */,
 				23F31A0620BF88F8006C9CFF /* AppDelegate.m in Sources */,
 				23F31A4120BFA5D5006C9CFF /* SPScanBoxView.m in Sources */,
