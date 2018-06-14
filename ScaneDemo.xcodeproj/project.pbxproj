@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2339BC3520D25EA00058C79D /* SPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2339BC3420D25EA00058C79D /* SPRequestManager.m */; };
 		2364564120C0F42D0044A6F6 /* SPUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564020C0F42D0044A6F6 /* SPUploadManager.m */; };
 		2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564320C0F7540044A6F6 /* UIImage+SPExt.m */; };
 		23CA481620CF56C600F664DE /* SPLeftBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA481520CF56C600F664DE /* SPLeftBubbleView.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2339BC3320D25EA00058C79D /* SPRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRequestManager.h; sourceTree = "<group>"; };
+		2339BC3420D25EA00058C79D /* SPRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRequestManager.m; sourceTree = "<group>"; };
 		2364563F20C0F42D0044A6F6 /* SPUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUploadManager.h; sourceTree = "<group>"; };
 		2364564020C0F42D0044A6F6 /* SPUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUploadManager.m; sourceTree = "<group>"; };
 		2364564220C0F7540044A6F6 /* UIImage+SPExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SPExt.h"; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				2364564020C0F42D0044A6F6 /* SPUploadManager.m */,
 				2364564220C0F7540044A6F6 /* UIImage+SPExt.h */,
 				2364564320C0F7540044A6F6 /* UIImage+SPExt.m */,
+				2339BC3320D25EA00058C79D /* SPRequestManager.h */,
+				2339BC3420D25EA00058C79D /* SPRequestManager.m */,
 			);
 			path = ScaneDemo;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				23F31A3820BF8958006C9CFF /* SPScanePreview.m in Sources */,
 				23D059EC20C4CBA000941858 /* CalenderView.m in Sources */,
 				2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */,
+				2339BC3520D25EA00058C79D /* SPRequestManager.m in Sources */,
 				23F31A3B20BF8A52006C9CFF /* SPScanManager.m in Sources */,
 				23CA481920CF698500F664DE /* SPBubbleImageView.m in Sources */,
 				23D059F120C4CBA000941858 /* NSDate+Extension.m in Sources */,
