@@ -11,10 +11,14 @@
 #import "Masonry.h"
 #import "SPLeftBubbleView.h"
 #import "SPBubbleImageView.h"
+#import "SPBezierLineChartView.h"
+
 @interface ViewController ()
 
 @property (nonatomic,strong) SPLeftBubbleView *dubbleView;
 @property (nonatomic,strong) SPBubbleImageView *imageView;
+@property (nonatomic,strong) SPBezierLineChartView *lineChaertView;
+
 @end
 
 @implementation ViewController
@@ -48,23 +52,33 @@
         make.size.mas_equalTo(CGSizeMake(205, 200));
         make.centerX.equalTo(self.view.mas_centerX).offset(0);
     }];
-    
  
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path addArcWithCenter:CGPointMake(self.view.frame.size.width - 30, 300) radius:5 startAngle:M_PI * 1.8 endAngle:M_PI * 2.5 clockwise:YES];
-  CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.path = path.CGPath;
-    layer.fillColor = [UIColor clearColor].CGColor;
-    layer.strokeColor = [UIColor redColor].CGColor;
-    [self.view.layer addSublayer:layer];
+    self.lineChaertView = [[SPBezierLineChartView alloc] init];
+    self.lineChaertView.backgroundColor = [UIColor whiteColor];
+    self.lineChaertView.firstArray = @[@"-3",@"10",@"5",@"9",@"18"];
+      self.lineChaertView.twoArray = @[@"-1",@"3",@"0",@"5",@"10"];
+    self.lineChaertView.threeArray  =@[@"0",@"5",@"-1",@"6",@"11"];
+    self.lineChaertView.fourArray = @[@"4",@"-3",@"0",@"5",@"1"];
+    self.lineChaertView.fiveAray = @[@"1",@"0",@"-2",@"4",@"6"];
+    self.lineChaertView.sixArray = @[@"3",@"-1",@"7",@"0",@"-2"];
+    [self.view addSubview:self.lineChaertView];
     
+    [self.lineChaertView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view).offset(0);
+        make.top.equalTo(self.imageView.mas_bottom).offset(10);
+        make.height.mas_equalTo(180);
+    }];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.dubbleView.isRight = NO;
         self.imageView.isRight = YES;
         [self.dubbleView setNeedsDisplay];
          [self.imageView setNeedsDisplay];
+      
     });
+    
+
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (void)clickScanAction {

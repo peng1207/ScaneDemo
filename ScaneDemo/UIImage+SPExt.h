@@ -18,4 +18,12 @@
  @return 图片
  */
 + (UIImage *) imageCompressForImage:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth;
+/**
+ 颜色转图片
+ 
+ @param color 颜色
+ @param size 图片大小
+ @return 图片
+ */
++ (UIImage*)createImageWithColor:(UIColor*)color size:(CGSize)size;
 @end

@@ -8,6 +8,7 @@ target 'ScaneDemo' do
   # Pods for ScaneDemo
   pod 'Masonry'
  pod 'AFNetworking'
+ pod 'FMDB'
   target 'ScaneDemoTests' do
     inherit! :search_paths
     # Pods for testing

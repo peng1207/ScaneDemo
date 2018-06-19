@@ -1,0 +1,6 @@
+module Pods_ScaneDemo {
+  umbrella header "Pods-ScaneDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
