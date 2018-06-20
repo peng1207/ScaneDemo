@@ -12,7 +12,10 @@
 #import "SPLeftBubbleView.h"
 #import "SPBubbleImageView.h"
 #import "SPBezierLineChartView.h"
-
+#import "SPRangGanNumView.h"
+#import "SPEditScoreView.h"
+#import "SPShareView.h"
+#import "SPSetRangGanView.h"
 @interface ViewController ()
 
 @property (nonatomic,strong) SPLeftBubbleView *dubbleView;
@@ -74,13 +77,29 @@
         self.imageView.isRight = YES;
         [self.dubbleView setNeedsDisplay];
          [self.imageView setNeedsDisplay];
-      
     });
     
-
     
+    NSArray *array = @[@"-3",@"-2",@"-1",@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"];
+    NSInteger start = 1 ;
+    NSInteger length = 7;
+    
+    if (start + length > array.count) {
+        
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [SPRangGanNumView showView:@"休闲鞋xx " complete:^(NSArray *listArray) {
+//            NSLog(@"  listArray   %@",listArray);
+//        }];
+        [SPSetRangGanView  showViewForUserArray:@[@"",@"",@"",@""]];
+    });
+  
     // Do any additional setup after loading the view, typically from a nib.
 }
+- (void)clickAdd:(NSInteger)start length:(NSInteger)length array:(NSArray *)array{
+    
+}
+
 - (void)clickScanAction {
     SPScanVC *scanVC = [[SPScanVC alloc] init];
     scanVC.scanBackBlock = ^(NSString *scanCodeType, NSString *result) {
