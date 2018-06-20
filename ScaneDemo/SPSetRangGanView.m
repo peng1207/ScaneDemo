@@ -74,7 +74,7 @@
         genderLabel.textColor = [UIColor blackColor];
         return genderLabel;
     }else{
- 
+
         //设置文字的属性
         UILabel *genderLabel = [UILabel new];
         genderLabel.textAlignment = NSTextAlignmentCenter;
@@ -82,11 +82,7 @@
         genderLabel.textColor = [UIColor blackColor];
         return genderLabel;
     }
-    
 
-    
-  
- 
 }
 
 + (void)showViewForUserArray:(NSArray *)userArray{
@@ -121,7 +117,7 @@
 -(void)addConstraintToView{
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(20);
-        make.right.equalTo(self).offset(-20);
+        make.right.equalTo(self).offset(-20).priorityHigh();
         make.centerY.equalTo(self).offset(0);
         make.height.mas_greaterThanOrEqualTo(0);
     }];
@@ -135,7 +131,7 @@
         make.height.mas_equalTo(162);
     }];
     [self.pickerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.pickerContentView.mas_width).multipliedBy(0.5);
+        make.width.equalTo(self.pickerContentView.mas_width).multipliedBy(0.5).priorityHigh();
         make.centerX.equalTo(self.pickerContentView.mas_centerX).offset(0);
         make.top.bottom.equalTo(self.pickerContentView).offset(0);
     }];
@@ -146,7 +142,7 @@
         make.width.equalTo(self.doneBtn.mas_width).offset(0);
     }];
     [self.doneBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.canceBtn.mas_right).offset(20);
+        make.left.equalTo(self.canceBtn.mas_right).offset(20).priorityHigh();
         make.top.equalTo(self.canceBtn.mas_top).offset(0);
         make.height.equalTo(self.canceBtn.mas_height).offset(0);
         make.right.equalTo(self.contentView.mas_right).offset(-12);
