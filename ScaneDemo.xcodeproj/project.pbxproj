@@ -17,6 +17,8 @@
 		23C2B2E820DA4DBE006601E8 /* SPSetRangGanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2E720DA4DBE006601E8 /* SPSetRangGanView.m */; };
 		23CA481620CF56C600F664DE /* SPLeftBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA481520CF56C600F664DE /* SPLeftBubbleView.m */; };
 		23CA481920CF698500F664DE /* SPBubbleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA481820CF698500F664DE /* SPBubbleImageView.m */; };
+		23CAF89820DB416800EDC01A /* SPUserScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CAF89720DB416800EDC01A /* SPUserScoreView.m */; };
+		23CAF89B20DB46C600EDC01A /* NSString+SPext.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CAF89A20DB46C600EDC01A /* NSString+SPext.m */; };
 		23D059EC20C4CBA000941858 /* CalenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D059DE20C4CB9F00941858 /* CalenderView.m */; };
 		23D059ED20C4CBA000941858 /* CalenderCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D059DF20C4CB9F00941858 /* CalenderCollectionCell.m */; };
 		23D059EE20C4CBA000941858 /* CalenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D059E220C4CB9F00941858 /* CalenderModel.m */; };
@@ -81,6 +83,10 @@
 		23CA481520CF56C600F664DE /* SPLeftBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPLeftBubbleView.m; sourceTree = "<group>"; };
 		23CA481720CF698500F664DE /* SPBubbleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBubbleImageView.h; sourceTree = "<group>"; };
 		23CA481820CF698500F664DE /* SPBubbleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBubbleImageView.m; sourceTree = "<group>"; };
+		23CAF89620DB416800EDC01A /* SPUserScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPUserScoreView.h; sourceTree = "<group>"; };
+		23CAF89720DB416800EDC01A /* SPUserScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPUserScoreView.m; sourceTree = "<group>"; };
+		23CAF89920DB46C500EDC01A /* NSString+SPext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SPext.h"; sourceTree = "<group>"; };
+		23CAF89A20DB46C600EDC01A /* NSString+SPext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SPext.m"; sourceTree = "<group>"; };
 		23D059DE20C4CB9F00941858 /* CalenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderView.m; sourceTree = "<group>"; };
 		23D059DF20C4CB9F00941858 /* CalenderCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderCollectionCell.m; sourceTree = "<group>"; };
 		23D059E020C4CB9F00941858 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -249,6 +255,8 @@
 				2364564020C0F42D0044A6F6 /* SPUploadManager.m */,
 				2364564220C0F7540044A6F6 /* UIImage+SPExt.h */,
 				2364564320C0F7540044A6F6 /* UIImage+SPExt.m */,
+				23CAF89920DB46C500EDC01A /* NSString+SPext.h */,
+				23CAF89A20DB46C600EDC01A /* NSString+SPext.m */,
 				2339BC3320D25EA00058C79D /* SPRequestManager.h */,
 				2339BC3420D25EA00058C79D /* SPRequestManager.m */,
 				23EDF0DB20D34BCB00FE5B60 /* SPKeyboardView.h */,
@@ -265,6 +273,8 @@
 				23C2B2E120DA2EDF006601E8 /* SPShareView.m */,
 				23C2B2E320DA37A2006601E8 /* SPEditScoreView.h */,
 				23C2B2E420DA37A2006601E8 /* SPEditScoreView.m */,
+				23CAF89620DB416800EDC01A /* SPUserScoreView.h */,
+				23CAF89720DB416800EDC01A /* SPUserScoreView.m */,
 			);
 			path = ScaneDemo;
 			sourceTree = "<group>";
@@ -501,10 +511,12 @@
 				23C2B2DF20DA1F91006601E8 /* SPRangGanNumView.m in Sources */,
 				23EDF0E020D36BD400FE5B60 /* SPDataBase.m in Sources */,
 				2395345620D8965800D4EB6D /* SPBezierLineChartView.m in Sources */,
+				23CAF89B20DB46C600EDC01A /* NSString+SPext.m in Sources */,
 				23F31A3820BF8958006C9CFF /* SPScanePreview.m in Sources */,
 				23D059EC20C4CBA000941858 /* CalenderView.m in Sources */,
 				2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */,
 				2339BC3520D25EA00058C79D /* SPRequestManager.m in Sources */,
+				23CAF89820DB416800EDC01A /* SPUserScoreView.m in Sources */,
 				23C2B2E220DA2EDF006601E8 /* SPShareView.m in Sources */,
 				23F31A3B20BF8A52006C9CFF /* SPScanManager.m in Sources */,
 				23CA481920CF698500F664DE /* SPBubbleImageView.m in Sources */,

@@ -88,14 +88,64 @@
         
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [SPRangGanNumView showView:@"休闲鞋xx " complete:^(NSArray *listArray) {
+//        [SPRangGanNumView showView:@"休闲鞋xx " complete:^(NSArrastry *listArray) {
 //            NSLog(@"  listArray   %@",listArray);
 //        }];
         [SPSetRangGanView  showViewForUserArray:@[@"",@"",@"",@""]];
     });
-  
+    
+    NSString *a = [@[@"a,b"] firstObject];
+    NSString *b = [[a mutableCopy] copy];
+
+    [[self getStringFormDic:b] containsString:@"a"];
+    [[self getStringFormDic:b] componentsSeparatedByString:@","];
+    NSLog(@"%@",[self getStringFormDic:b]);
     // Do any additional setup after loading the view, typically from a nib.
 }
+/**
+ *  转换为json
+ */
+- (NSDictionary *)stringToJson:(id)jsonString{
+    NSDictionary *parmDic;
+    if (![jsonString isKindOfClass:[NSDictionary class]] && [jsonString isKindOfClass:[NSString class]]) {
+        NSString *string = (NSString *)jsonString;
+        parmDic =  [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+    }
+    if ([jsonString isKindOfClass:[NSDictionary class]]) {
+        parmDic = jsonString;
+    }
+    if (![parmDic isKindOfClass:[NSDictionary class]]) {
+        parmDic = @{};
+    }
+    return parmDic;
+}
+
+-(NSString *)getStringFormDic:(id)dicResult{
+    if (dicResult) {
+        if (![dicResult isKindOfClass:[NSNull class]] && ![dicResult isEqual:nil] && ![dicResult isEqual:[NSNull null]]) {
+            NSString *result = @"";
+            result = [NSString stringWithFormat:@"%@",dicResult];
+            if (result && result.length > 0) {
+                if ([result isEqualToString:@"(null)"] || [result isEqualToString:@"<null>"]) {
+                    return @"";
+                }
+                else{
+                    return result;
+                }
+            }
+            else{
+                return @"";
+            }
+        }
+        else{
+            return @"";
+        }
+    }
+    else{
+        return @"";
+    }
+}
+
 - (void)clickAdd:(NSInteger)start length:(NSInteger)length array:(NSArray *)array{
     
 }
