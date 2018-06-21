@@ -16,6 +16,7 @@
 #import "SPEditScoreView.h"
 #import "SPShareView.h"
 #import "SPSetRangGanView.h"
+#import "SPUserScoreView.h"
 @interface ViewController ()
 
 @property (nonatomic,strong) SPLeftBubbleView *dubbleView;
@@ -56,21 +57,21 @@
         make.centerX.equalTo(self.view.mas_centerX).offset(0);
     }];
  
-    self.lineChaertView = [[SPBezierLineChartView alloc] init];
-    self.lineChaertView.backgroundColor = [UIColor whiteColor];
-    self.lineChaertView.firstArray = @[@"-3",@"10",@"5",@"9",@"18"];
-      self.lineChaertView.twoArray = @[@"-1",@"3",@"0",@"5",@"10"];
-    self.lineChaertView.threeArray  =@[@"0",@"5",@"-1",@"6",@"11"];
-    self.lineChaertView.fourArray = @[@"4",@"-3",@"0",@"5",@"1"];
-    self.lineChaertView.fiveAray = @[@"1",@"0",@"-2",@"4",@"6"];
-    self.lineChaertView.sixArray = @[@"3",@"-1",@"7",@"0",@"-2"];
-    [self.view addSubview:self.lineChaertView];
-    
-    [self.lineChaertView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view).offset(0);
-        make.top.equalTo(self.imageView.mas_bottom).offset(10);
-        make.height.mas_equalTo(180);
-    }];
+//    self.lineChaertView = [[SPBezierLineChartView alloc] init];
+//    self.lineChaertView.backgroundColor = [UIColor whiteColor];
+//    self.lineChaertView.firstArray = @[@"-3",@"10",@"5",@"9",@"18"];
+//      self.lineChaertView.twoArray = @[@"-1",@"3",@"0",@"5",@"10"];
+//    self.lineChaertView.threeArray  =@[@"0",@"5",@"-1",@"6",@"11"];
+//    self.lineChaertView.fourArray = @[@"4",@"-3",@"0",@"5",@"1"];
+//    self.lineChaertView.fiveAray = @[@"1",@"0",@"-2",@"4",@"6"];
+//    self.lineChaertView.sixArray = @[@"3",@"-1",@"7",@"0",@"-2"];
+//    [self.view addSubview:self.lineChaertView];
+//
+//    [self.lineChaertView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(self.view).offset(0);
+//        make.top.equalTo(self.imageView.mas_bottom).offset(10);
+//        make.height.mas_equalTo(180);
+//    }];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.dubbleView.isRight = NO;
@@ -93,7 +94,19 @@
 //        }];
         [SPSetRangGanView  showViewForUserArray:@[@"",@"",@"",@""]];
     });
-    
+    SPUserScoreView *scoreView = [[SPUserScoreView alloc] init];
+    scoreView.layer.cornerRadius = 5;
+    scoreView.backgroundColor = [UIColor whiteColor];
+    scoreView.layer.masksToBounds = YES;
+    scoreView.layer.borderColor = [UIColor blackColor].CGColor;
+    scoreView.layer.borderWidth = 1; 
+    [self.view addSubview:scoreView];
+    [scoreView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(12);
+        make.right.equalTo(self.view).offset(-12);
+        make.height.mas_greaterThanOrEqualTo(0);
+        make.top.equalTo(self.imageView.mas_bottom).offset(10);
+    }];
     NSString *a = [@[@"a,b"] firstObject];
     NSString *b = [[a mutableCopy] copy];
 

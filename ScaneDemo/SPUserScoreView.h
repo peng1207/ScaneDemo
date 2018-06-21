@@ -13,7 +13,7 @@
 @end
 
 @interface SPUserScoreContentView : UIView
-
+@property (nonatomic,strong) NSArray *listArray; 
 @end
 
 @interface SPUserScoreItemView : UIView
