@@ -12,6 +12,7 @@
 		2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564320C0F7540044A6F6 /* UIImage+SPExt.m */; };
 		2395345620D8965800D4EB6D /* SPBezierLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395345520D8965800D4EB6D /* SPBezierLineChartView.m */; };
 		23B2DA4C20DC994500EF76CF /* SPPkAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B2DA4B20DC994500EF76CF /* SPPkAlertView.m */; };
+		23B2DA4F20DCCA3D00EF76CF /* SPTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B2DA4E20DCCA3D00EF76CF /* SPTriangleView.m */; };
 		23C2B2DF20DA1F91006601E8 /* SPRangGanNumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2DE20DA1F91006601E8 /* SPRangGanNumView.m */; };
 		23C2B2E220DA2EDF006601E8 /* SPShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2E120DA2EDF006601E8 /* SPShareView.m */; };
 		23C2B2E520DA37A2006601E8 /* SPEditScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2E420DA37A2006601E8 /* SPEditScoreView.m */; };
@@ -74,6 +75,8 @@
 		2395345520D8965800D4EB6D /* SPBezierLineChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBezierLineChartView.m; sourceTree = "<group>"; };
 		23B2DA4A20DC994500EF76CF /* SPPkAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPkAlertView.h; sourceTree = "<group>"; };
 		23B2DA4B20DC994500EF76CF /* SPPkAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPkAlertView.m; sourceTree = "<group>"; };
+		23B2DA4D20DCCA3D00EF76CF /* SPTriangleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTriangleView.h; sourceTree = "<group>"; };
+		23B2DA4E20DCCA3D00EF76CF /* SPTriangleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTriangleView.m; sourceTree = "<group>"; };
 		23C2B2DD20DA1F91006601E8 /* SPRangGanNumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRangGanNumView.h; sourceTree = "<group>"; };
 		23C2B2DE20DA1F91006601E8 /* SPRangGanNumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRangGanNumView.m; sourceTree = "<group>"; };
 		23C2B2E020DA2EDF006601E8 /* SPShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPShareView.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				23CAF89720DB416800EDC01A /* SPUserScoreView.m */,
 				23B2DA4A20DC994500EF76CF /* SPPkAlertView.h */,
 				23B2DA4B20DC994500EF76CF /* SPPkAlertView.m */,
+				23B2DA4D20DCCA3D00EF76CF /* SPTriangleView.h */,
+				23B2DA4E20DCCA3D00EF76CF /* SPTriangleView.m */,
 			);
 			path = ScaneDemo;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 				23D059F120C4CBA000941858 /* NSDate+Extension.m in Sources */,
 				23C2B2E520DA37A2006601E8 /* SPEditScoreView.m in Sources */,
 				23F31A0620BF88F8006C9CFF /* AppDelegate.m in Sources */,
+				23B2DA4F20DCCA3D00EF76CF /* SPTriangleView.m in Sources */,
 				23F31A4120BFA5D5006C9CFF /* SPScanBoxView.m in Sources */,
 				2364564120C0F42D0044A6F6 /* SPUploadManager.m in Sources */,
 			);

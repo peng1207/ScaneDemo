@@ -18,6 +18,7 @@
 #import "SPSetRangGanView.h"
 #import "SPUserScoreView.h"
 #import "SPPkAlertView.h"
+#import "SPTriangleView.h"
 @interface ViewController ()
 
 @property (nonatomic,strong) SPLeftBubbleView *dubbleView;
@@ -94,30 +95,36 @@
 //            NSLog(@"  listArray   %@",listArray);
 //        }];
 //        [SPSetRangGanView  showViewForUserArray:@[@"",@"",@"",@""]];
-        [SPPkAlertView  showViewForTitle:@"XXXX" dataArray:@[@"1",@"2",@"3",@"4",@"2",@"3",@"4",@"2",@"3",@"4",@"2",@"3",@"4"] complete:^(NSIndexPath *indexPath) {
-            
-        }];
+//        [SPPkAlertView  showViewForTitle:@"XXXX" dataArray:@[@"1",@"2",@"3",@"4"] complete:^(NSIndexPath *indexPath) {
+//
+//        }];
     });
-    SPUserScoreView *scoreView = [[SPUserScoreView alloc] init];
-    scoreView.layer.cornerRadius = 5;
-    scoreView.backgroundColor = [UIColor whiteColor];
-    scoreView.layer.masksToBounds = YES;
-    scoreView.layer.borderColor = [UIColor blackColor].CGColor;
-    scoreView.layer.borderWidth = 1; 
-    [self.view addSubview:scoreView];
-    [scoreView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(12);
-        make.right.equalTo(self.view).offset(-12);
-        make.height.mas_greaterThanOrEqualTo(0);
-        make.top.equalTo(self.imageView.mas_bottom).offset(10);
-    }];
-    NSString *a = [@[@"a,b"] firstObject];
-    NSString *b = [[a mutableCopy] copy];
-
-    [[self getStringFormDic:b] containsString:@"a"];
-    [[self getStringFormDic:b] componentsSeparatedByString:@","];
-    NSLog(@"%@",[self getStringFormDic:b]);
+//    SPUserScoreView *scoreView = [[SPUserScoreView alloc] init];
+//    scoreView.layer.cornerRadius = 5;
+//    scoreView.backgroundColor = [UIColor whiteColor];
+//    scoreView.layer.masksToBounds = YES;
+//    scoreView.layer.borderColor = [UIColor blackColor].CGColor;
+//    scoreView.layer.borderWidth = 1;
+//    [self.view addSubview:scoreView];
+//    [scoreView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.view).offset(12);
+//        make.right.equalTo(self.view).offset(-12);
+//        make.height.mas_greaterThanOrEqualTo(0);
+//        make.top.equalTo(self.imageView.mas_bottom).offset(10);
+//    }];
+//    NSString *a = [@[@"a,b"] firstObject];
+//    NSString *b = [[a mutableCopy] copy];
     // Do any additional setup after loading the view, typically from a nib.
+    SPTriangleView *triangleView = [[SPTriangleView  alloc] init];
+    triangleView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:triangleView];
+    [triangleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(20, 10));
+        make.top.equalTo(self.imageView.mas_bottom).offset(0);
+        make.centerX.equalTo(self.view).offset(0);
+    }];
+    
+    
 }
 /**
  *  转换为json
