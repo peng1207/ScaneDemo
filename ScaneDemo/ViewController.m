@@ -123,8 +123,10 @@
         make.top.equalTo(self.imageView.mas_bottom).offset(0);
         make.centerX.equalTo(self.view).offset(0);
     }];
-    
-    
+    NSArray *numArray = @[@"-3",@"-2",@"-1",@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"17",@"18",@"19",@"20"];
+    [self clickAdd:1 length:7 array:numArray];
+      [self clickAdd:8 length:7 array:numArray];
+    [self clickMinu:1 array:numArray];
 }
 /**
  *  转换为json
@@ -171,9 +173,37 @@
 }
 
 - (void)clickAdd:(NSInteger)start length:(NSInteger)length array:(NSArray *)array{
-    
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    if (start + length > array.count) {
+        start = array.count - length - 1;
+        [list addObject:@"<<"];
+        [list addObjectsFromArray:[array subarrayWithRange:NSMakeRange(start, length)]];
+    }else{
+        if (start != 0) {
+             [list addObject:@"<<"];
+        }
+        [list addObjectsFromArray:[array subarrayWithRange:NSMakeRange(start, length)]];
+        [list addObject:@">>"];
+    }
+    NSLog(@"array is %@------%ld",list,start);
 }
-
+- (void)clickMinu:(NSInteger)start array:(NSArray *)array{
+      NSMutableArray *list = [[NSMutableArray alloc] init];
+    NSInteger length = 7;
+    if (start - length < 0) {
+        start = 0;
+        if (length + 1 < array.count) {
+            length ++;
+        }
+        [list addObjectsFromArray: [array subarrayWithRange:NSMakeRange(start, length)]];
+        [list addObject:@">>"];
+    }else{
+        [list addObject:@"<<"];
+        [list addObjectsFromArray:[array subarrayWithRange:NSMakeRange(start, length)]];
+        [list addObject:@">>"];
+    }
+    NSLog(@"%@------%ld",list,start);
+}
 - (void)clickScanAction {
     SPScanVC *scanVC = [[SPScanVC alloc] init];
     scanVC.scanBackBlock = ^(NSString *scanCodeType, NSString *result) {
