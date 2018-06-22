@@ -17,6 +17,7 @@
 #import "SPShareView.h"
 #import "SPSetRangGanView.h"
 #import "SPUserScoreView.h"
+#import "SPPkAlertView.h"
 @interface ViewController ()
 
 @property (nonatomic,strong) SPLeftBubbleView *dubbleView;
@@ -92,7 +93,10 @@
 //        [SPRangGanNumView showView:@"休闲鞋xx " complete:^(NSArrastry *listArray) {
 //            NSLog(@"  listArray   %@",listArray);
 //        }];
-        [SPSetRangGanView  showViewForUserArray:@[@"",@"",@"",@""]];
+//        [SPSetRangGanView  showViewForUserArray:@[@"",@"",@"",@""]];
+        [SPPkAlertView  showViewForTitle:@"XXXX" dataArray:@[@"1",@"2",@"3",@"4",@"2",@"3",@"4",@"2",@"3",@"4",@"2",@"3",@"4"] complete:^(NSIndexPath *indexPath) {
+            
+        }];
     });
     SPUserScoreView *scoreView = [[SPUserScoreView alloc] init];
     scoreView.layer.cornerRadius = 5;

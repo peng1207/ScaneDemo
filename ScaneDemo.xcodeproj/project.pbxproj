@@ -11,6 +11,7 @@
 		2364564120C0F42D0044A6F6 /* SPUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564020C0F42D0044A6F6 /* SPUploadManager.m */; };
 		2364564420C0F7540044A6F6 /* UIImage+SPExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2364564320C0F7540044A6F6 /* UIImage+SPExt.m */; };
 		2395345620D8965800D4EB6D /* SPBezierLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395345520D8965800D4EB6D /* SPBezierLineChartView.m */; };
+		23B2DA4C20DC994500EF76CF /* SPPkAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B2DA4B20DC994500EF76CF /* SPPkAlertView.m */; };
 		23C2B2DF20DA1F91006601E8 /* SPRangGanNumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2DE20DA1F91006601E8 /* SPRangGanNumView.m */; };
 		23C2B2E220DA2EDF006601E8 /* SPShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2E120DA2EDF006601E8 /* SPShareView.m */; };
 		23C2B2E520DA37A2006601E8 /* SPEditScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C2B2E420DA37A2006601E8 /* SPEditScoreView.m */; };
@@ -71,6 +72,8 @@
 		2364564320C0F7540044A6F6 /* UIImage+SPExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SPExt.m"; sourceTree = "<group>"; };
 		2395345420D8965800D4EB6D /* SPBezierLineChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBezierLineChartView.h; sourceTree = "<group>"; };
 		2395345520D8965800D4EB6D /* SPBezierLineChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBezierLineChartView.m; sourceTree = "<group>"; };
+		23B2DA4A20DC994500EF76CF /* SPPkAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPkAlertView.h; sourceTree = "<group>"; };
+		23B2DA4B20DC994500EF76CF /* SPPkAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPkAlertView.m; sourceTree = "<group>"; };
 		23C2B2DD20DA1F91006601E8 /* SPRangGanNumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRangGanNumView.h; sourceTree = "<group>"; };
 		23C2B2DE20DA1F91006601E8 /* SPRangGanNumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRangGanNumView.m; sourceTree = "<group>"; };
 		23C2B2E020DA2EDF006601E8 /* SPShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPShareView.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				23C2B2E420DA37A2006601E8 /* SPEditScoreView.m */,
 				23CAF89620DB416800EDC01A /* SPUserScoreView.h */,
 				23CAF89720DB416800EDC01A /* SPUserScoreView.m */,
+				23B2DA4A20DC994500EF76CF /* SPPkAlertView.h */,
+				23B2DA4B20DC994500EF76CF /* SPPkAlertView.m */,
 			);
 			path = ScaneDemo;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				23D059EE20C4CBA000941858 /* CalenderModel.m in Sources */,
 				23F31A1420BF88FA006C9CFF /* main.m in Sources */,
 				23EDF0DD20D34BCB00FE5B60 /* SPKeyboardView.m in Sources */,
+				23B2DA4C20DC994500EF76CF /* SPPkAlertView.m in Sources */,
 				23D059ED20C4CBA000941858 /* CalenderCollectionCell.m in Sources */,
 				23CA481620CF56C600F664DE /* SPLeftBubbleView.m in Sources */,
 				23F31A3E20BFA355006C9CFF /* SPScanVC.m in Sources */,
